@@ -1,14 +1,13 @@
 {
   "name": "Safe Payment",
   "version": "1.0",
-  "description": "detect not shaparak pages!",
-  "permissions": ["activeTab", "browserAction", "storage", "tabs"],
+  "description": "detect shaparak pages!",
+  "permissions": ["browserAction", "tabs"],
   "background": {
     "scripts": ["background.js"],
     "persistent": false
   },
   "browser_action": {
-    "default_popup": "popup.html",
     "default_icon": {
       "16": "assets/logo/lr16.png",
       "32": "assets/logo/lr32.png",

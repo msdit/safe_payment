@@ -1,21 +1,3 @@
-// chrome.runtime.onInstalled.addListener(function () {
-//   chrome.tabs.getSelected(null, function (tab) {
-//     const regTest = /^https:\/\/[\w\d]{1,}.chrome.com\//.test(tab.url);
-//     let imageData = {};
-//     for (let size of ["16", "32", "48", "128"]) {
-//       imageData[size] = `assets/logo/lg${size}.png`;
-//     }
-//     chrome.storage.sync.set({ regTest }, function () {
-//       console.log("regTest: ", regTest);
-//       console.log("tab.url: ", tab.url);
-//       console.log("imageData: ", imageData);
-//     });
-//     if (regTest) {
-//       chrome.browserAction.setIcon({ imageData });
-//     }
-//   });
-// });
-
 const urlRegex = (url) => /^https:\/\/[\w\d]{1,}.shaparak.ir\//.test(url);
 
 var alertError = function (arg) {
@@ -29,7 +11,7 @@ var alertError = function (arg) {
 chrome.browserAction.onClicked.addListener(alertError);
 chrome.tabs.onActivated.addListener(function (info) {
   chrome.tabs.get(info.tabId, function (change) {
-    if (change.url == undefined) {
+    if (!change || change.url == undefined) {
       chrome.browserAction.setPopup({ tabId: info.tabId, popup: "" });
       chrome.browserAction.setIcon({
         path: "assets/logo/lr.png",

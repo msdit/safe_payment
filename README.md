@@ -1,3 +1,3 @@
 # safe_payment
 
-Chrome extension for detect fishing in Iranian online payment
+Safe Payment is a Chrome extension for detecting phishing when using Shaparak for online payments.

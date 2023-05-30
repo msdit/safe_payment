@@ -1,25 +1,33 @@
 {
-  "name": "Safe Payment",
-  "version": "1.0",
-  "description": "detect shaparak pages!",
-  "permissions": ["browserAction", "tabs"],
+  "author": "Masoud Aghaei",
+  "name": "Safe Payment | پرداخت امن",
+  "version": "2.0.0",
+  "description": "پرداخت امن | امنیت پرداخت در درگاه‌های پرداخت اینترنتی",
+  "permissions": ["tabs"],
   "background": {
-    "scripts": ["background.js"],
-    "persistent": false
+    "scripts": ["assets/js/background.js"]
   },
-  "browser_action": {
+  "content_scripts": [ {
+    "exclude_globs": [ "*://www.shaparak.ir/*", "*://shaparak.ir/*" ],
+    "js": [ "assets/js/content-script.js" ],
+    "matches": [ "https://*.shaparak.ir/*" ]
+  } ],
+  "page_action": {
     "default_icon": {
-      "16": "assets/logo/lr16.png",
-      "32": "assets/logo/lr32.png",
-      "48": "assets/logo/lr48.png",
-      "128": "assets/logo/lr128.png"
-    }
+      "16": "assets/logo/logo16.png",
+      "32": "assets/logo/logo32.png",
+      "48": "assets/logo/logo48.png",
+      "128": "assets/logo/logo128.png"
+    },
+    "default_popup": "popup.html",
+    "default_title": "Safe Payment | پرداخت امن"
   },
   "icons": {
-    "16": "assets/logo/lr16.png",
-    "32": "assets/logo/lr32.png",
-    "48": "assets/logo/lr48.png",
-    "128": "assets/logo/lr128.png"
+    "16": "assets/logo/logo16.png",
+    "32": "assets/logo/logo32.png",
+    "48": "assets/logo/logo48.png",
+    "128": "assets/logo/logo128.png"
   },
-  "manifest_version": 2
+  "manifest_version": 2,
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAm0iApWNWmA/uXJV3EKRIgBplCU4ee4Em9FPwb/5fewK4Pq3i/boyum2v4TK4D6wiVRUIWlYUUJvTtQl7RsgCOvG17OnpNoTJ52TS1unggOvge+umrb5PhAGCZXhpqY43WaXq2aBxT/EZJax0bhbAv/Gsm0CdRG4cWcchpuNEJTiJZL/sJiZPDt9cxGQoHLw9sUFunAmYehl92q5GvyH4jvMWkyKW1dOUHvanQyJKM16qnD6fiNPzeV4AtryVl03k+Q6ULOM0kZTdsLts1k8A4S9Yg9UQ92MWonO1abdZtUsfR3WmBO6l0OHZGmAG7RGfDCndQn+GV+cBjMDHhsYZXQIDAQAB"
 }

@@ -8,7 +8,7 @@ chrome.tabs.onUpdated.addListener(checkUrl);
 function checkUrl (tabId, change, tab) {
     if (tab && tab.url && change.status === 'complete') {
         if (isValidUrl(tab.url)) {
-            chrome.pageAction.setIcon({
+            chrome.browserAction.setIcon({
                 tabId: tabId,
                 path: {
                     128: "/assets/logo/verify.png"

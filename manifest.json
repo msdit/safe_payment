@@ -1,7 +1,7 @@
 {
   "author": "Masoud Aghaei",
   "name": "Safe Payment | پرداخت امن",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "پرداخت امن | امنیت پرداخت در درگاه‌های پرداخت اینترنتی",
   "permissions": ["tabs"],
   "background": {
